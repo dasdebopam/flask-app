@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Complaint Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Banking Complaint Classifier</h1>
+        <form method="POST" action="/predict">
+            <label for="message">Enter Your Complaint:</label><br>
+            <textarea id="message" name="message" rows="5" cols="40"></textarea><br>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
